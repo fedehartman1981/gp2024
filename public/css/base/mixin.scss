@@ -1,0 +1,158 @@
+/*--| Degradé Top - Bot
+---------------------------------------------------------------- |--*/
+@mixin DegTopBot($top, $bottom){
+  background: linear-gradient(to bottom, $top 0%,$bottom 100%); /* W3C */
+}
+/*--| @include DegTopBot(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0)); |--*/
+
+
+/*--| Degradé Left - Right
+---------------------------------------------------------------- |--*/
+@mixin DegLeftRight($left, $right){
+  background: linear-gradient(to right,  $left 0%,$right 100%); /* W3C */
+}
+/*--| @include DegLeftRight(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0)); |--*/
+
+
+/*--| Transiciones
+---------------------------------------------------------------- |--*/
+@mixin transition($time) {
+      transition: $time;
+}
+/*--| @include transition(all 0.15s ease-in-out); |--*/
+
+
+/*--| Box-model
+---------------------------------------------------------------- |--*/
+
+@mixin box-sizing($box-model) {
+       box-sizing: $box-model;
+}
+/*--| @include box-sizing(border-box); |--*/
+
+
+/*--| Placeholder
+---------------------------------------------------------------- |--*/
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+/*--| @include placeholder {font-style:italic; etc etc} |--*/
+
+
+/*--| Cálculo de dimensiones
+---------------------------------------------------------------- |--*/
+@mixin calc($property, $expression) { 
+  #{$property}: calc(#{$expression}); 
+} 
+/*--| @include calc(width, "25% - 1em"); |--*/
+
+
+/*--| Selección de texto
+---------------------------------------------------------------- |--*/
+@mixin selection {
+  ::selection {@content;}
+}
+/*--| @include selection {color: white; background: black;}} |--*/
+
+
+/*--| Font
+---------------------------------------------------------------- |--*/
+@mixin font($font-weight, $font-size, $line-height, $font-family, $color) { 
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+  color: $color;
+}
+/*--| @include font(400, 1.5em, 2.0em, $a1, $ne); |--*/
+
+
+/*--| Width-Height
+---------------------------------------------------------------- |--*/
+@mixin w($width, $height) { 
+  width: $width;
+  height: $height;
+}
+/*--| @include w(400px, 700px); |--*/
+
+
+/*--| Font Size - Line Height
+---------------------------------------------------------------- |--*/
+@mixin f($font-size, $line-height) { 
+  font-size: $font-size;
+  line-height: $line-height;
+}
+/*--| @include f(1.5em, 2em); |--*/
+
+
+/*--| Para este sitio
+-----------------------------------------------------------------|--*/
+
+a * {color: rgba(255, 255, 255, 0); text-decoration: none;}
+a:hover * {}
+
+/*--| Media queries
+---------------------------------------------------------------- |--*/
+
+@mixin only_mobile { /* mom */
+  @media screen and (max-width: 989px) {
+    @content;
+  }
+}
+@mixin small_mobile { /* mbi */
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+@mixin big_mobile { /* mbi */
+  @media screen and (min-width: 360px) {
+    @content;
+  }
+}
+@mixin ipad_vertical { /* mip */
+  @media screen and (min-width: 760px) {
+    @content;
+  }
+}
+@mixin netbook { /* mne */
+  @media screen and (min-width: 990px) {
+    @content;
+  }
+}
+@mixin notebook { /* mne */
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin desk { /* mde */
+  @media screen and (min-width: 1350px) {
+    @content;
+  }
+}
+@mixin big_desk { /* mbd */
+  @media screen and (min-width: 1590px) {
+    @content;
+  }
+}
+@mixin gran_desk { /* mbd */
+  @media screen and (min-width: 1700px) {
+    @content;
+  }
+}
+@mixin wide_desk { /* mbd */
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+/*--| @include desk {bla bla} |--*/
+
+/*--| Borde Curvo
+---------------------------------------------------------------- |--*/
+@mixin border-radius($radius) {
+      border-radius: $radius;
+}
+/*--| @include border-radius(50%); |--*/
+

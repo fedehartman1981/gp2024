@@ -1,0 +1,38 @@
+/* Animate
+---------------------------------------*/
+
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+.ejemplo {
+  animation-name: example;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* Ico
+---------------------------------------*/
+@include w(8vw, 8vw);
+background-size: 8vw, 8vw;
+background-repeat: no-repeat; background-position: center center;
+background-image: $svg-delsolLogo;
+
+
+background: $sol2; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+
+-webkit-mask-image: linear-gradient(to bottom, black 25%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 25%, transparent 100%);
+
+
+display: -webkit-box;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;  
+overflow: hidden;

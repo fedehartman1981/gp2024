@@ -1,0 +1,109 @@
+/*--| Body
+---------------------------------------------------------------- |--*/
+
+html.no-scroll {overflow: hidden;}
+
+body {
+  @include w(100%, auto); min-height: 100vh; overflow: hidden;
+  background-color: #ec008c;
+}
+
+
+@keyframes numero {
+  0%   {opacity: 0; margin-bottom: 30vh; transform: scale(.85);}
+  10%  {margin-bottom: 15vh;}
+  20%  {opacity: 1; }
+  100% {transform: scale(1.0);}
+}
+
+@keyframes pie {
+  0%   {opacity: 0; bottom: 1vh;}
+  100% {opacity: 1; bottom: 3vh;}
+}
+
+
+/*--| Main
+---------------------------------------------------------------- |--*/
+body {
+  background-color: #ec008c;
+  overflow:hidden;
+  height: 100vh;
+}
+
+.content {
+  @include w(100vw, 100vh);
+  display: flex;
+  align-items: center;
+}
+
+
+.v-mobile {
+  background-color: #ec008c;
+  @include w(100vw, 100vh);
+  object-fit: cover;
+  @include netbook {display: none;}
+}
+
+
+
+.v-desk {
+  background-color: #ec008c;
+  object-fit: cover;
+  @include w(100vw, 100vh);
+  @include only_mobile {
+    display: none;
+  }
+}
+
+
+h1 {
+  display: block;
+  animation-name: numero;
+  animation-duration: 5000ms;
+   animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  @include w(100vw, auto);
+  margin-bottom: 15vh;
+  font-size: 14vw;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'univers';
+  font-weight: 700;
+  /*letter-spacing: -1.5vh;*/
+}
+
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    position: absolute;
+    z-index: 50;
+    bottom: 3vh;
+    display: flex; opacity: 0;
+    justify-content: center;    align-items: center;
+    animation-name: pie;
+    animation-duration: 600ms;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 30s;
+  a {
+    opacity: .9;
+    display:inline-block;
+    font-size: 2vh;
+    letter-spacing: .5px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'univers-500';
+    font-weight: 400; padding: 5px 9px 6px 9px;
+    text-decoration: none;
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
+      opacity: 1;
+      @include transition(all 0.15s ease-in-out);
+      background-color: #0d0d0d;
+    }
+  }
+}
+
